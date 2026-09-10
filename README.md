@@ -23,6 +23,22 @@ OpenCode, and Kilo Code all have an entry point here; see [`USAGE.md`](./USAGE.m
 - **Using an AI agent?** Point it at [`llms.txt`](./llms.txt) and
   [`AGENTS.md`](./AGENTS.md), or invoke the [`/mcp-contribute` skill](./.claude/skills/mcp-contribute/SKILL.md).
 
+## Supported AI coding tools
+
+Each tool has a native entry point here. `AGENTS.md` is the canonical source;
+the tool-specific files point to it, so there is one loop to keep fresh.
+
+| Tool | Entry point |
+|------|-------------|
+| Claude Code | `CLAUDE.md` + `AGENTS.md` + the `/mcp-contribute` skill |
+| Cursor | `.cursor/rules/mcp-contribute.mdc` |
+| Codex (OpenAI CLI) | `AGENTS.md` |
+| OpenCode | `AGENTS.md` |
+| Kilo Code | `.kilocode/rules/mcp-contribute.md` |
+
+See [`USAGE.md`](./USAGE.md) for how to invoke each and how to reuse the entry
+points in another project.
+
 ## What's in here
 
 ```
