@@ -1,0 +1,39 @@
+# Contributing to a modelcontextprotocol repo
+
+Applies when finding an MCP issue to work on, evaluating or reproducing an MCP
+SDK bug, or opening a PR/issue to a `modelcontextprotocol` repo (go-sdk,
+python-sdk, typescript-sdk, servers, inspector, the spec repo, extensions).
+
+The full canonical loop is in [AGENTS.md](../../AGENTS.md); depth is in
+[guide/](../../guide) (01 finding work, 02 per-repo playbook, 03 opening a PR,
+04 finding/verifying bugs). Follow the steps and do not skip verification.
+
+## Non-negotiables
+
+- Verify an issue is genuinely unclaimed with the per-issue **timeline API**,
+  not a text search. `ready for work` is a magnet, not an opening.
+- **inspector takes issues, not PRs.** The **spec repo uses the SEP process**
+  for protocol changes (docs/schema fixes are normal PRs).
+- Verify a bug's premise against the **code AND the spec** before writing a fix.
+  Ask "what real client/flow actually hits this?" Reproduce before claiming;
+  test before submitting.
+- Keep changes small and defensible. **No AI/tool attribution** in commits,
+  trailers, PRs, or comments. Terse, human, conventional style.
+
+## Freshness check (per issue)
+
+```bash
+gh api repos/modelcontextprotocol/<repo>/issues/<N>/timeline --paginate \
+  | jq -r '.[] | select(.event=="cross-referenced")
+           | .source.issue.pull_request.html_url // empty'
+```
+
+Fresh only if that is empty, the issue has no assignee, and no recent comment
+calls dibs. A comment claim counts even without a PR.
+
+## Opening a PR
+
+Match the repo's commit/PR conventions. If a push is rejected with
+"...workflow scope...", your fork is behind upstream; cherry-pick your commit
+onto the fork's own `main` so the push carries only your files (see
+[guide/03-opening-a-pr.md](../../guide/03-opening-a-pr.md)).

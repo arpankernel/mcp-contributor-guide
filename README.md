@@ -13,7 +13,8 @@ wasted on issues that are already being worked, or on fixes whose premise does
 not survive contact with the maintainer. This repo turns that hard-won,
 learned-the-hard-way knowledge into a reusable playbook.
 
-**Works for both humans and AI coding agents.**
+**Works for both humans and AI coding agents** (Claude Code, Cursor, Codex,
+OpenCode, and Kilo Code all have an entry point here; see [`USAGE.md`](./USAGE.md)).
 
 ## Start here
 
@@ -36,7 +37,13 @@ guide/
   03-opening-a-pr.md               conventions + the workflow-scope push fix
   04-finding-and-verifying-bugs.md premise-scrutiny, reproduction, bug taxonomy
 .claude/skills/mcp-contribute/     the /mcp-contribute Claude Code skill
+.cursor/rules/                     Cursor rule entry point
+.kilocode/rules/                   Kilo Code rule entry point
 ```
+
+Agent entry points: Claude Code (`CLAUDE.md` + skill), Codex and OpenCode
+(`AGENTS.md`), Cursor (`.cursor/rules/`), Kilo Code (`.kilocode/rules/`).
+`AGENTS.md` is the canonical source; the tool-specific files point to it.
 
 ## The guide, in reading order
 

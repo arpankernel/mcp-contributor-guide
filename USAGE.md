@@ -35,26 +35,37 @@ your target.
 
 ## Option B: use it with an AI coding agent
 
-The repo is built to be consumed by agents (Claude Code, Cursor, and similar).
+The repo ships entry points for the major AI coding tools. `AGENTS.md` is the
+single canonical source of the loop; each tool-specific file is a thin pointer
+to it plus the non-negotiable rules, so there is one source of truth to keep
+fresh.
 
-- **Claude Code:** copy the skill into your working project, or work from inside
-  this repo, and invoke it:
+| Tool | What it reads | Notes |
+|------|---------------|-------|
+| **Claude Code** | `CLAUDE.md`, `AGENTS.md`, and the `/mcp-contribute` skill | Invoke `/mcp-contribute` for the full loop with commands embedded |
+| **Cursor** | `.cursor/rules/mcp-contribute.mdc` | Agent-requested rule; fires when the task matches its description |
+| **Codex** (OpenAI Codex CLI) | `AGENTS.md` | Reads `AGENTS.md` at the repo root by convention |
+| **OpenCode** | `AGENTS.md` | Follows the AGENTS.md convention |
+| **Kilo Code** | `.kilocode/rules/mcp-contribute.md` | Loaded as a workspace rule |
 
-  ```
-  /mcp-contribute
-  ```
+So from any of these, just ask the agent to find an MCP issue to work on, or to
+evaluate/reproduce/fix a specific one, and it will follow the verified loop
+(detect the repo's contribution model, find genuinely-fresh work, verify the
+premise, reproduce, make a small tested change, open the PR or a detailed issue
+for inspector).
 
-  The skill ([`.claude/skills/mcp-contribute/SKILL.md`](./.claude/skills/mcp-contribute/SKILL.md))
-  runs the whole loop with the commands embedded: detect the repo's contribution
-  model, find genuinely-fresh work, verify the premise, reproduce, make a small
-  tested change, and open the PR (or a detailed issue, for inspector).
+### Reusing it in another project
 
-- **Other agents / LLMs:** point the agent at [`llms.txt`](./llms.txt) (the
-  machine-facing index) and [`AGENTS.md`](./AGENTS.md) (the step-by-step loop).
-  [`CLAUDE.md`](./CLAUDE.md) is a thin pointer so both harness conventions work.
+Copy the entry point(s) for your tool into the project you are working in:
 
-To reuse the skill in another project, copy the `.claude/skills/mcp-contribute/`
-directory into that project's `.claude/skills/`.
+- Claude Code: `.claude/skills/mcp-contribute/` (plus `CLAUDE.md`/`AGENTS.md`)
+- Cursor: `.cursor/rules/mcp-contribute.mdc`
+- Kilo Code: `.kilocode/rules/mcp-contribute.md`
+- Codex / OpenCode: `AGENTS.md`
+
+Bring the `guide/` directory along too if you want the full depth available to
+the agent. Note: tool conventions evolve; if an agent is not picking up the
+rules, check that tool's current docs for where it loads project rules.
 
 ## Common scenarios
 
