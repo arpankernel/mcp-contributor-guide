@@ -33,6 +33,7 @@ what you should confirm yourself from the repo's own docs.
 | `php-sdk` | PHP | no | see its docs (likely Composer + PHPUnit) |
 | `ruby-sdk` | Ruby | no | see its docs (likely Bundler + RSpec/minitest) |
 | `rust-sdk` | Rust | no | Cargo (`cargo build` / `cargo test`); needs a Rust toolchain |
+| `swift-sdk` | Swift | no | Swift Package Manager (`swift build` / `swift test`); see its docs |
 | `registry` | Go | partial | Go; accepts PRs, but many open issues are ops/takedown/register requests a maintainer handles, not code. Filter for genuine code bugs. |
 | `mcpb` | TypeScript | partial | **Yarn** via `corepack enable` then `corepack yarn ...`. Many issues are Claude Desktop client bugs filed here; fixable ones are in the `mcpb` CLI/library code. |
 | `conformance` | TypeScript | no | Node; the MCP conformance test suite |
