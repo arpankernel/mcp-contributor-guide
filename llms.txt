@@ -17,9 +17,11 @@
 - [Finding work that is actually open](./guide/01-finding-work.md): why the
   bulk "is it claimed?" text search undercounts, the reliable per-issue timeline
   check, the `ready for work` magnet trap, and the strike-first approach.
-- [Per-repo playbook](./guide/02-repo-playbook.md): which repos accept PRs vs
-  issues only (inspector is issues-only), branch and label conventions, and the
-  build/test command for each SDK.
+- [Per-repo playbook](./guide/02-repo-playbook.md): every non-archived org repo
+  in five buckets (takes PRs / issues-only / spec SEP process / extension repos /
+  working-groups and infra). inspector is issues-only; the `modelcontextprotocol`
+  spec repo uses the SEP process for protocol changes. Build/test commands for
+  the code repos.
 - [Opening a PR without tripping](./guide/03-opening-a-pr.md): commit and PR
   style, the fork-behind-upstream `workflow`-scope push rejection and the
   cherry-pick-onto-fork-main workaround.

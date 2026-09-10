@@ -19,9 +19,10 @@ or an agent, start with [`llms.txt`](./llms.txt) and [`AGENTS.md`](./AGENTS.md).
 1. [Finding work that is actually open](./guide/01-finding-work.md): the
    org is saturated; here is how to find genuinely-fresh, unclaimed work instead
    of racing five other PRs.
-2. [Per-repo playbook](./guide/02-repo-playbook.md): which repos take PRs,
-   which take issues only, branch/label conventions, and how to build and test
-   each one.
+2. [Per-repo playbook](./guide/02-repo-playbook.md): covers **every
+   non-archived repo in the org**, grouped into five contribution models (takes
+   PRs / issues-only / the spec's SEP process / extension repos / working-groups
+   and infra), with build and test commands for the ones that take code.
 3. [Opening a PR without tripping](./guide/03-opening-a-pr.md): commit/PR
    conventions, the fork-behind-upstream `workflow`-scope gotcha, and the
    cherry-pick workaround.
