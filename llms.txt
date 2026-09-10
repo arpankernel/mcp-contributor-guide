@@ -1,0 +1,43 @@
+# MCP Contributor Field Guide
+
+> A practical guide to landing a contribution in the modelcontextprotocol
+> GitHub org (go-sdk, python-sdk, typescript-sdk, servers, inspector). Written
+> for humans and agents. The core insight: the org is saturated, so do not race
+> existing issues. Strike first on fresh bugs or discover your own, verify the
+> premise and the claim status before investing, and keep changes small and
+> reproduced.
+
+## Start here
+
+- [README](./README.md): overview and reading order.
+- [AGENTS.md](./AGENTS.md): step-by-step instructions for an LLM/agent contributor.
+
+## Guide
+
+- [Finding work that is actually open](./guide/01-finding-work.md): why the
+  bulk "is it claimed?" text search undercounts, the reliable per-issue timeline
+  check, the `ready for work` magnet trap, and the strike-first approach.
+- [Per-repo playbook](./guide/02-repo-playbook.md): which repos accept PRs vs
+  issues only (inspector is issues-only), branch and label conventions, and the
+  build/test command for each SDK.
+- [Opening a PR without tripping](./guide/03-opening-a-pr.md): commit and PR
+  style, the fork-behind-upstream `workflow`-scope push rejection and the
+  cherry-pick-onto-fork-main workaround.
+- [Finding and verifying bugs](./guide/04-finding-and-verifying-bugs.md): a
+  12-class bug taxonomy for an MCP SDK, how to reproduce each class, and the
+  premise-scrutiny that prevents "working as intended" closes.
+
+## Key external references
+
+- modelcontextprotocol org: https://github.com/modelcontextprotocol
+- MCP spec (latest revision): https://modelcontextprotocol.io/specification
+- MCP registry (publish community servers): https://github.com/modelcontextprotocol/registry
+
+## One-line rules
+
+- Check an issue is unclaimed with the timeline API, not a text search.
+- `ready for work` issues are usually the MOST contested, not the least.
+- inspector does not accept external PRs; open a detailed issue instead.
+- Verify a bug's premise against code AND spec before writing a fix.
+- Reproduce every bug with a runnable test before claiming it.
+- Keep PRs small, tested, and low-noise; protect the maintainer's trust.
