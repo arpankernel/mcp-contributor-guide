@@ -14,6 +14,9 @@ on fixes whose premise does not survive contact with the maintainer.
 This guide is written for **both humans and coding agents**. If you are an LLM
 or an agent, start with [`llms.txt`](./llms.txt) and [`AGENTS.md`](./AGENTS.md).
 
+**New here? See [`USAGE.md`](./USAGE.md)** for how to use this repo (as a human,
+or with an AI agent via the `/mcp-contribute` skill).
+
 ## Read this in order
 
 1. [Finding work that is actually open](./guide/01-finding-work.md): the

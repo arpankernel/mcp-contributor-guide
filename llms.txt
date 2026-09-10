@@ -10,6 +10,7 @@
 ## Start here
 
 - [README](./README.md): overview and reading order.
+- [USAGE](./USAGE.md): how to use this repo as a human or with an AI agent.
 - [AGENTS.md](./AGENTS.md): step-by-step instructions for an LLM/agent contributor.
 
 ## Guide
